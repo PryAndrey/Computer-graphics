@@ -1,0 +1,23 @@
+# Common IntelliJ Platform excludes
+# User specific
+# Sensitive or high-churn files
+# Rider
+# Rider auto-generates .iml files, and contentModel.xml
+*.suo
+*.user
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.dll
+*.props
+*.targets
+*.json
+*.pdb
+*.dylib
+*.3
+*.cache
+*.editorconfig
+*.Up2Date
+*.info
+*.exe
+*.txt
