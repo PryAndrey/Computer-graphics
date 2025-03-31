@@ -3,19 +3,13 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
-        <RootNamespace>lw_1</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="FreeTypeSharp.Core" Version="0.8.0" />
-      <PackageReference Include="Hexa.NET.OpenGL4" Version="1.1.0" />
       <PackageReference Include="OpenTK" Version="4.9.3" />
-      <PackageReference Include="OpenTK.Graphics" Version="4.9.3" />
       <PackageReference Include="OpenTK.Mathematics" Version="4.9.3" />
-      <PackageReference Include="SharpFont" Version="4.0.1" />
-      <PackageReference Include="System.Drawing.Common" Version="9.0.2" />
     </ItemGroup>
 
 </Project>

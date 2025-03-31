@@ -8,53 +8,255 @@ namespace Test
 {
     class Program
     {
-        struct Letter
+        public class Truck
         {
-            public float MinHeight;
-            public float MaxHeight;
-            public float X { get; set; }
-            public float Y { get; set; }
+            public float X { get; set; } = 0.0f;
+            public float Y { get; set; } = 0.0f;
 
-            public float VelocityY { get; set; }
-
-            public float Acceleration { get; set; }
-
-            public Letter(float x, float y, float velocityY, float acceleration, float minHeight, float maxHeight)
+            public (float[] vertices, float[] colors, PrimitiveType type) GetRoadData()
             {
-                X = x;
-                Y = y;
-                VelocityY = velocityY;
-                Acceleration = acceleration;
-                MinHeight = minHeight;
-                MaxHeight = maxHeight;
+                float[] vertices = new[]
+                {
+                    -1.0f + X, -0.5f + Y, 0.0f,
+                    1.0f + X, -0.5f + Y, 0.0f,
+                    1.0f + X, -0.35f + Y, 0.0f,
+                    -1.0f + X, -0.35f + Y, 0.0f
+                };
+
+                float[] colors = new[]
+                {
+                    0.1f, 0.1f, 0.1f, 1.0f,
+                    0.1f, 0.1f, 0.1f, 1.0f,
+                    0.1f, 0.1f, 0.1f, 1.0f,
+                    0.1f, 0.1f, 0.1f, 1.0f
+                };
+
+                return (vertices, colors, PrimitiveType.TriangleFan);
             }
 
-            public void UpdateLetter()
+            public (float[] vertices, float[] colors, PrimitiveType type)[] GetBodyData()
             {
-                VelocityY += Acceleration;
-
-                Y += VelocityY;
-
-                // Проверка на достижение максимальной высоты
-                if (Y >= MaxHeight)
+                return new (float[], float[], PrimitiveType type)[]
                 {
-                    Y = MaxHeight;
-                    VelocityY = -VelocityY; // Изменение направления
-                }
-                // Проверка на достижение минимальной высоты
-                else if (Y <= MinHeight)
+                    (
+                        new float[]
+                        {
+                            -0.8f + X, -0.2f + Y, 0.0f,
+                            0.3f + X, -0.2f + Y, 0.0f,
+                            0.3f + X, 0.7f + Y, 0.0f,
+                            -0.8f + X, 0.7f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.7f, 0.7f, 0.7f, 1.0f,
+                            0.7f, 0.7f, 0.7f, 1.0f,
+                            0.9f, 0.9f, 0.9f, 1.0f,
+                            0.9f, 0.9f, 0.9f, 1.0f
+                        },
+                        PrimitiveType.TriangleFan
+                    ),
+                    (
+                        new float[]
+                        {
+                            -0.8f + X, -0.2f + Y, 0.0f,
+                            0.8f + X, -0.2f + Y, 0.0f,
+                            0.8f + X, -0.1f + Y, 0.0f,
+                            -0.8f + X, -0.1f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.2f, 0.2f, 0.2f, 1.0f,
+                            0.2f, 0.2f, 0.2f, 1.0f,
+                            0.2f, 0.2f, 0.2f, 1.0f,
+                            0.2f, 0.2f, 0.2f, 1.0f
+                        },
+                        PrimitiveType.TriangleFan
+                    )
+                };
+            }
+
+            public (float[] vertices, float[] colors, PrimitiveType type)[] GetCabData()
+            {
+                return new (float[], float[], PrimitiveType type)[]
                 {
-                    Y = MinHeight;
-                    VelocityY = -VelocityY; // Изменение направления
-                }
+                    (
+                        new float[]
+                        {
+                            0.35f + X, -0.1f + Y, 0.0f,
+                            0.7f + X, -0.1f + Y, 0.0f,
+                            0.7f + X, 0.45f + Y, 0.0f,
+                            0.35f + X, 0.45f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f
+                        },
+                        PrimitiveType.TriangleFan
+                    ),
+                    (
+                        new float[]
+                        {
+                            0.35f + X, 0.45f + Y, 0.0f,
+                            0.7f + X, 0.45f + Y, 0.0f,
+                            0.35f + X, 0.5f + Y, 0.0f,
+                            0.6f + X, 0.49f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f
+                        },
+                        PrimitiveType.TriangleStrip
+                    ),
+                    (
+                        new float[]
+                        {
+                            0.7f + X, -0.1f + Y, 0.0f,
+                            0.8f + X, -0.1f + Y, 0.0f,
+                            0.7f + X, 0.2f + Y, 0.0f,
+                            0.76f + X, 0.2f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f,
+                            0.5f, 0.6f, 0.7f, 1.0f
+                        },
+                        PrimitiveType.TriangleStrip
+                    )
+                };
+            }
+
+            public (float[] vertices, float[] colors, PrimitiveType type)[] GetWindowData()
+            {
+                return new (float[], float[], PrimitiveType type)[]
+                {
+                    (
+                        new float[]
+                        {
+                            0.4f + X, 0.25f + Y, 0.0f,
+                            0.6f + X, 0.25f + Y, 0.0f,
+                            0.6f + X, 0.45f + Y, 0.0f,
+                            0.4f + X, 0.45f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f
+                        },
+                        PrimitiveType.TriangleFan
+                    ),
+                    (
+                        new float[]
+                        {
+                            0.6f + X, 0.25f + Y, 0.0f,
+                            0.65f + X, 0.25f + Y, 0.0f,
+                            0.6f + X, 0.45f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f
+                        },
+                        PrimitiveType.TriangleStrip
+                    ),
+                    (
+                        new float[]
+                        {
+                            0.7f + X, 0.2f + Y, 0.0f,
+                            0.75f + X, 0.2f + Y, 0.0f,
+                            0.65f + X, 0.45f + Y, 0.0f,
+                            0.7f + X, 0.45f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f,
+                            0.4f, 0.6f, 1.0f, 1.0f
+                        },
+                        PrimitiveType.TriangleStrip
+                    )
+                };
+            }
+
+            public (float[] vertices, float[] colors, PrimitiveType type)[] GetDoorData()
+            {
+                return new (float[], float[], PrimitiveType type)[]
+                {
+                    (
+                        new float[]
+                        {
+                            0.4f + X, 0.25f + Y, 0.0f,
+                            0.4f + X, -0.05f + Y, 0.0f,
+                            0.4f + X, -0.05f + Y, 0.0f,
+                            0.7f + X, -0.05f + Y, 0.0f,
+                            0.7f + X, -0.05f + Y, 0.0f,
+                            0.65f + X, 0.25f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.0f, 0.0f, 0.0f, 1.0f,
+                            0.0f, 0.0f, 0.0f, 1.0f,
+                            0.0f, 0.0f, 0.0f, 1.0f,
+                            0.0f, 0.0f, 0.0f, 1.0f,
+                            0.0f, 0.0f, 0.0f, 1.0f,
+                            0.0f, 0.0f, 0.0f, 1.0f
+                        },
+                        PrimitiveType.Lines
+                    ),
+                    (
+                        new float[]
+                        {
+                            0.42f + X, 0.2f + Y, 0.0f,
+                            0.5f + X, 0.2f + Y, 0.0f,
+                            0.5f + X, 0.22f + Y, 0.0f,
+                            0.42f + X, 0.22f + Y, 0.0f
+                        },
+                        new float[]
+                        {
+                            0.3f, 0.3f, 0.3f, 1.0f,
+                            0.3f, 0.3f, 0.3f, 1.0f,
+                            0.3f, 0.3f, 0.3f, 1.0f,
+                            0.3f, 0.3f, 0.3f, 1.0f
+                        },
+                        PrimitiveType.TriangleFan
+                    )
+                };
+            }
+
+            public (float x, float y, float radius, float[] colors)[] GetWheelData()
+            {
+                return new (float x, float y, float radius, float[] colors)[]
+                {
+                    (-0.5f + X, -0.3f + Y, 0.2f, new float[] { 0.0f, 0.0f, 0.0f }),
+                    (-0.5f + X, -0.3f + Y, 0.15f, new float[] { 0.4f, 0.4f, 0.4f }),
+                    (0.5f + X, -0.3f + Y, 0.2f, new float[] { 0.0f, 0.0f, 0.0f }),
+                    (0.5f + X, -0.3f + Y, 0.15f, new float[] { 0.4f, 0.4f, 0.4f }),
+                };
+            }
+
+            public (float x, float y, float radius, float[] colors) GetLightData()
+            {
+                return new(0.75f + X, -0.07f + Y, 0.02f, new float[] { 1.0f, 1.0f, 0.0f });
             }
         }
 
         public class Game : GameWindow
         {
-            private Letter _letter1 = new Letter(-0.5f, -0.7f, 0.0f, 0.001f, -0.7f, 0.9f);
-            private Letter _letter2 = new Letter(0.0f, -0.7f, 0.0f, 0.002f, -0.7f, 0.9f);
-            private Letter _letter3 = new Letter(0.5f, -0.7f, 0.0f, 0.0005f, -0.7f, 0.9f);
+            private Truck _truck = new Truck();
+            private Vector2 _mousePosition = Vector2.Zero;
+            private bool _isDragging = false;
+            private Vector2 _dragOffset;
 
             public Game(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
                 : base(gameWindowSettings, nativeWindowSettings)
@@ -74,6 +276,63 @@ namespace Test
                 // GL.PolygonMode(TriangleFace.Front, PolygonMode.Line);
             }
 
+            protected override void OnMouseDown(MouseButtonEventArgs e)
+            {
+                base.OnMouseDown(e);
+
+                if (e.Button == MouseButton.Left)
+                {
+                    var mouseState = MouseState;
+                    Vector2 mousePosition = new Vector2(mouseState.X, mouseState.Y);
+                    Vector2 worldPosition = ScreenToWorld(mousePosition);
+                    _isDragging = true;
+                    _dragOffset = worldPosition - this._mousePosition;
+                }
+            }
+
+            protected override void OnMouseUp(MouseButtonEventArgs e)
+            {
+                base.OnMouseUp(e);
+
+                if (e.Button == MouseButton.Left)
+                {
+                    _isDragging = false;
+                }
+            }
+
+            protected override void OnMouseMove(MouseMoveEventArgs e)
+            {
+                base.OnMouseMove(e);
+
+                if (_isDragging)
+                {
+                    Vector2 mousePosition = new Vector2(e.X, e.Y);
+                    Vector2 worldPosition = ScreenToWorld(mousePosition);
+                    this._mousePosition = worldPosition - _dragOffset;
+                }
+            }
+
+            private Vector2 ScreenToWorld(Vector2 screenPosition)
+            {
+                float x = (screenPosition.X / ClientSize.X) * 2.0f - 1.0f;
+                float y = 1.0f - (screenPosition.Y / ClientSize.Y) * 2.0f;
+                return new Vector2(x, y);
+            }
+
+            private void DrawVertexArray(int vSize, PrimitiveType type, int verCount, float[] vertices, float[] colors)
+            {
+                GL.EnableClientState(ArrayCap.VertexArray);
+                GL.VertexPointer(vSize, VertexPointerType.Float, 0, vertices);
+
+                GL.EnableClientState(ArrayCap.ColorArray);
+                GL.ColorPointer(4, ColorPointerType.Float, 0, colors);
+
+                GL.DrawArrays(type, 0, verCount);
+
+                GL.DisableClientState(ArrayCap.VertexArray);
+                GL.DisableClientState(ArrayCap.ColorArray);
+            }
+
             protected override void OnResize(ResizeEventArgs e)
             {
                 base.OnResize(e);
@@ -89,17 +348,20 @@ namespace Test
                     Close();
                 }
 
-                _letter1.UpdateLetter();
-                _letter2.UpdateLetter();
-                _letter3.UpdateLetter();
-
                 base.OnUpdateFrame(args);
             }
-
+// todo отрисовка при ресайзе
             protected override void OnRenderFrame(FrameEventArgs args)
             {
                 GL.Clear(ClearBufferMask.ColorBufferBit);
+
+                GL.PushMatrix();
+                GL.Translate(_mousePosition.X, _mousePosition.Y, 0.0f);
+
                 DrawTruck();
+
+                GL.PopMatrix();
+
                 SwapBuffers();
                 base.OnRenderFrame(args);
             }
@@ -109,119 +371,54 @@ namespace Test
                 base.OnUnload();
             }
 
+            // todo вынести функцию отрисовки
             private void DrawTruck()
             {
                 // Рисуем дорогу
                 {
-                    GL.Begin(PrimitiveType.Quads);
-                    GL.Color3(0.1f, 0.1f, 0.1f);
-                    GL.Vertex2(-1.0f, -0.5f);
-                    GL.Vertex2(1.0f, -0.5f);
-                    GL.Vertex2(1.0f, -0.35f);
-                    GL.Vertex2(-1.0f, -0.35f);
-                    GL.End();
+                    var (roadVertices, roadColors, type) = _truck.GetRoadData();
+                    DrawVertexArray(3, type, 4, roadVertices, roadColors);
                 }
 
                 // Рисуем кузов
+                foreach (var (vertices, colors, type) in _truck.GetBodyData())
                 {
-                    GL.Begin(PrimitiveType.Quads);
-                    GL.Color3(0.7f, 0.7f, 0.7f);
-                    GL.Vertex2(-0.8f, -0.2f);
-                    GL.Vertex2(0.3f, -0.2f);
-                    GL.Color3(0.9f, 0.9f, 0.9f);
-                    GL.Vertex2(0.3f, 0.7f);
-                    GL.Vertex2(-0.8f, 0.7f);
-                    GL.Color3(0.2f, 0.2f, 0.2f);
-                    GL.Vertex2(-0.8f, -0.2f);
-                    GL.Vertex2(0.8f, -0.2f);
-                    GL.Vertex2(0.8f, -0.1f);
-                    GL.Vertex2(-0.8f, -0.1f);
-                    GL.End();
+                    DrawVertexArray(3, type, 4, vertices, colors);
                 }
 
                 // Рисуем кабину
+                foreach (var (vertices, colors, type) in _truck.GetCabData())
                 {
-                    GL.Color3(0.5f, 0.6f, 0.7f);
-                    GL.Begin(PrimitiveType.Quads);
-                    GL.Vertex2(0.35f, -0.1f);
-                    GL.Vertex2(0.7f, -0.1f);
-                    GL.Vertex2(0.7f, 0.45f);
-                    GL.Vertex2(0.35f, 0.45f);
-                    GL.End();
-                    GL.Begin(PrimitiveType.TriangleStrip);
-                    GL.Vertex2(0.35f, 0.45f);
-                    GL.Vertex2(0.7f, 0.45f);
-                    GL.Vertex2(0.35f, 0.5f);
-                    GL.Vertex2(0.6f, 0.49f);
-                    GL.End();
-                    GL.Begin(PrimitiveType.TriangleStrip);
-                    GL.Vertex2(0.7f, -0.1f);
-                    GL.Vertex2(0.8f, -0.1f);
-                    GL.Vertex2(0.7f, 0.2f);
-                    GL.Vertex2(0.76f, 0.2f);
-                    GL.End();
+                    DrawVertexArray(3, type, 4, vertices, colors);
                 }
 
                 // Рисуем окно
+                foreach (var (vertices, colors, type) in _truck.GetWindowData())
                 {
-                    GL.Color3(0.4f, 0.6f, 1.0f); // Светло-синий цвет
-                    GL.Begin(PrimitiveType.Quads);
-                    GL.Vertex2(0.4f, 0.25f);
-                    GL.Vertex2(0.6f, 0.25f);
-                    GL.Vertex2(0.6f, 0.45f);
-                    GL.Vertex2(0.4f, 0.45f);
-                    GL.End();
-                    GL.Begin(PrimitiveType.TriangleStrip);
-                    GL.Vertex2(0.6f, 0.25f);
-                    GL.Vertex2(0.65f, 0.25f);
-                    GL.Vertex2(0.6f, 0.45f);
-                    GL.End();
-                    GL.Begin(PrimitiveType.TriangleStrip);
-                    GL.Vertex2(0.7f, 0.2f);
-                    GL.Vertex2(0.75f, 0.2f);
-                    GL.Vertex2(0.65f, 0.45f);
-                    GL.Vertex2(0.7f, 0.45f);
-                    GL.End();
+                    DrawVertexArray(3, type, 4, vertices, colors);
                 }
 
                 // Рисуем дверь
+                GL.LineWidth(2);
+                foreach (var (vertices, colors, type) in _truck.GetDoorData())
                 {
-                    GL.LineWidth(2);
-                    GL.Color3(0.0f, 0.0f, 0.0f);
-                    GL.Begin(PrimitiveType.Lines);
-                    GL.Vertex2(0.4f, 0.25f);
-                    GL.Vertex2(0.4f, -0.05f);
-                    GL.Vertex2(0.4f, -0.05f);
-                    GL.Vertex2(0.7f, -0.05f);
-                    GL.Vertex2(0.7f, -0.05f);
-                    GL.Vertex2(0.65f, 0.25f);
-                    GL.End();
-                    GL.Begin(PrimitiveType.Quads);
-                    GL.Color3(0.3f, 0.3f, 0.3f);
-                    GL.Vertex2(0.42f, 0.2f);
-                    GL.Vertex2(0.5f, 0.2f);
-                    GL.Vertex2(0.5f, 0.22f);
-                    GL.Vertex2(0.42f, 0.22f);
-                    GL.End();
+                    DrawVertexArray(3, type, vertices.Length / 3, vertices, colors);
                 }
 
                 // Рисуем колеса
                 {
-                    GL.Color3(0.0f, 0.0f, 0.0f); // Черный цвет
-
-                    DrawCircle(-0.5f, -0.3f, 0.2f);
-                    GL.Color3(0.4f, 0.4f, 0.4f);
-                    DrawCircle(-0.5f, -0.3f, 0.15f);
-                    GL.Color3(0.0f, 0.0f, 0.0f); // Черный цвет
-                    DrawCircle(0.5f, -0.3f, 0.2f);
-                    GL.Color3(0.4f, 0.4f, 0.4f);
-                    DrawCircle(0.5f, -0.3f, 0.15f);
+                    foreach (var (x, y, r, color) in _truck.GetWheelData())
+                    {
+                        GL.Color3(color[0], color[1], color[2]);
+                        DrawCircle(x, y, r);
+                    }
                 }
 
                 // Рисуем фары
                 {
-                    GL.Color3(1.0f, 1.0f, 0.0f); // Черный цвет
-                    DrawCircle(0.75f, -0.07f, 0.02f);
+                    var (x, y, r, color) = _truck.GetLightData();
+                    GL.Color3(color[0], color[1], color[2]);
+                    DrawCircle(x, y, r);
                 }
             }
 

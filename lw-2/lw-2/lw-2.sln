@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lw-2", "lw-2\lw-2.csproj", "{B0C8C85B-E3B9-4627-95CD-5A4D8E01BD16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paint1", "Paint1\Paint1.csproj", "{D09A9660-49CA-4EEC-97D0-DE09390726C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elements", "Elements\Elements.csproj", "{EC5D1143-3774-4C48-A639-BB6DF281ACB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0C8C85B-E3B9-4627-95CD-5A4D8E01BD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C8C85B-E3B9-4627-95CD-5A4D8E01BD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C8C85B-E3B9-4627-95CD-5A4D8E01BD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C8C85B-E3B9-4627-95CD-5A4D8E01BD16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09A9660-49CA-4EEC-97D0-DE09390726C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09A9660-49CA-4EEC-97D0-DE09390726C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09A9660-49CA-4EEC-97D0-DE09390726C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09A9660-49CA-4EEC-97D0-DE09390726C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5D1143-3774-4C48-A639-BB6DF281ACB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5D1143-3774-4C48-A639-BB6DF281ACB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5D1143-3774-4C48-A639-BB6DF281ACB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5D1143-3774-4C48-A639-BB6DF281ACB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
