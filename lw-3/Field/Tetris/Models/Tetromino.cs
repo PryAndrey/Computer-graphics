@@ -172,6 +172,6 @@ public class Tetromino
         { TetrominoType.S, Color.Purple },
         { TetrominoType.Stick, Color.Red },
         { TetrominoType.Square, Color.LightGreen },
-        { TetrominoType.Piramid, Color.LightBlue }
+        { TetrominoType.Piramid, Color.Blue }
     };
 }

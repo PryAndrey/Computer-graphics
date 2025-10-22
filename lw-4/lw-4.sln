@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lw-4", "lw-4\lw-4.csproj", "{6BE981D9-C52D-44C0-864E-706D1EB66726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobius_Strip", "Mobius_Strip\Mobius_Strip.csproj", "{84D61BAC-C563-4AA4-9D50-9EF140CD54E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labyrinth", "Labyrinth\Labyrinth.csproj", "{69D3D6F8-60E2-4B60-8FE2-ED0C29D5215C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BE981D9-C52D-44C0-864E-706D1EB66726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE981D9-C52D-44C0-864E-706D1EB66726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE981D9-C52D-44C0-864E-706D1EB66726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE981D9-C52D-44C0-864E-706D1EB66726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D61BAC-C563-4AA4-9D50-9EF140CD54E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D61BAC-C563-4AA4-9D50-9EF140CD54E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D61BAC-C563-4AA4-9D50-9EF140CD54E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D61BAC-C563-4AA4-9D50-9EF140CD54E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D3D6F8-60E2-4B60-8FE2-ED0C29D5215C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D3D6F8-60E2-4B60-8FE2-ED0C29D5215C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D3D6F8-60E2-4B60-8FE2-ED0C29D5215C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D3D6F8-60E2-4B60-8FE2-ED0C29D5215C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

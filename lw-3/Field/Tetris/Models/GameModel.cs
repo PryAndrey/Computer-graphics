@@ -29,9 +29,11 @@ namespace Tetris.Models
             Board = new GameBoard();
             State = GameState.NotStarted;
 
-            InitializeGameTimer();
+            _gameTimer = new System.Timers.Timer();
+            _gameTimer.Elapsed += OnGameTick;
+            _gameTimer.AutoReset = true;
         }
-        
+
         public GameState State { get; private set; }
         public int Score { get; private set; }
         public int Level { get; private set; }
@@ -44,7 +46,7 @@ namespace Tetris.Models
             Level = 1;
             _totalClearedLines = 0;
             LinesToNextLevel = LinesPerLevel;
-            
+
             Board.Start();
             State = GameState.Running;
             GameStateChanged?.Invoke(State);
@@ -112,7 +114,7 @@ namespace Tetris.Models
         {
             State = GameState.GameOver;
             GameStateChanged?.Invoke(State);
-            _gameTimer.Stop();  
+            _gameTimer.Stop();
         }
 
         private void UpdateScore(int linesCleared)
@@ -138,12 +140,11 @@ namespace Tetris.Models
                 LevelChanged?.Invoke();
 
                 Level++;
-
                 LinesToNextLevel += Level * LinesPerLevel;
-
                 AdjustDropSpeed();
-
                 Score += Board.GetUnfilledLinesCount() * 10;
+                
+                Board.ClearBoard();
             }
         }
 
@@ -153,13 +154,6 @@ namespace Tetris.Models
             {
                 _gameTimer.Interval = Math.Max(MinimumDropInterval, _gameTimer.Interval - DropIntervalDecrement);
             }
-        }
-
-        private void InitializeGameTimer()
-        {
-            _gameTimer = new System.Timers.Timer();
-            _gameTimer.Elapsed += OnGameTick;
-            _gameTimer.AutoReset = true;
         }
 
         private void OnGameTick(object sender, ElapsedEventArgs e)

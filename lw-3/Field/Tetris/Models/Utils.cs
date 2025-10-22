@@ -91,7 +91,7 @@ public class TextRenderer : IDisposable
     private bool _disposed;
     private PointF _position;
 
-    public Font font = new Font(FontFamily.GenericMonospace, 24);
+    public Font font = new Font(FontFamily.GenericSansSerif, 24);
 
     // Конструктор нового экземпляра класса
     public TextRenderer(int width, int height)
@@ -123,12 +123,6 @@ public class TextRenderer : IDisposable
         _position = PointF.Empty;
         _gfx.Clear(color);
         _rectGFX = new Rectangle(0, 0, _bmp.Width, _bmp.Height);
-    }
-
-    // Выводит строку текста в точке point на растровом образе, используя шрифт font и кисть brush
-    public void DrawString(string text, Brush brush)
-    {
-        _gfx.DrawString(text, font, brush, PointF.Empty);
     }
 
     public void DrawNewString(string text, Brush brush)

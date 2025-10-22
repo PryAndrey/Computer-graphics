@@ -19,7 +19,7 @@ namespace Tetris.Shaders
 
             var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
             GL.ShaderSource(fragmentShader, fragmentShaderSource);
-            //Компиляция шейдеров
+            // Компиляция шейдеров
             GL.CompileShader(vertexShader);
 
             GL.GetShader(vertexShader, ShaderParameter.CompileStatus, out int successV);

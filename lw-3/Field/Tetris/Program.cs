@@ -10,9 +10,9 @@ namespace Tetris
         {
             var nativeWindowSettings = new NativeWindowSettings
             {
-                ClientSize = new Vector2i(800, 900),
-                MinimumClientSize = new Vector2i(800, 900),
-                MaximumClientSize = new Vector2i(1200, 1200),
+                ClientSize = new Vector2i(600, 600),
+                MinimumClientSize = new Vector2i(600, 600),
+                MaximumClientSize = new Vector2i(900, 1000),
                 Location = new Vector2i(370, 300),
                 WindowBorder = WindowBorder.Resizable,
                 WindowState = WindowState.Normal,

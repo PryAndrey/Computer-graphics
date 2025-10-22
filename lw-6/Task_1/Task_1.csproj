@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AssimpNet" Version="4.1.0" />
+      <PackageReference Include="OpenTK" Version="4.9.4" />
+      <PackageReference Include="OpenTK.Graphics" Version="4.9.4" />
+      <PackageReference Include="System.Drawing.Common" Version="9.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="bin\Debug\net9.0\01EGONQFHVIZDI8LCY2JZT5AA.jpg" />
+      <None Include="bin\Debug\net9.0\19de10103a14456a9f434cbc64439ce5.jpg" />
+      <None Include="bin\Debug\net9.0\2Q0YOLQOEK7WSVV254QTXCS3G.jpg" />
+      <None Include="bin\Debug\net9.0\310de63b71a9410d949edb5d8fe8ab67.jpg" />
+      <None Include="bin\Debug\net9.0\4carz1024.jpg" />
+      <None Include="bin\Debug\net9.0\4carz1024_glass.jpg" />
+      <None Include="bin\Debug\net9.0\7FQUA3XJHV49RJ6UV21DUGDAT.jpg" />
+      <None Include="bin\Debug\net9.0\8WYXVI4Z7CYNB5S7VL5H7HOCJ.jpg" />
+      <None Include="bin\Debug\net9.0\8XGZ0N63H4VEPUSRERIQRSJMF.jpg" />
+      <None Include="bin\Debug\net9.0\8XQN1047F4EUTUXGIHQNIGBQA.jpg" />
+      <None Include="bin\Debug\net9.0\caliper.jpg" />
+      <None Include="bin\Debug\net9.0\car_glass.jpg" />
+      <None Include="bin\Debug\net9.0\chassis_gen1.jpg" />
+      <None Include="bin\Debug\net9.0\D.jpg" />
+      <None Include="bin\Debug\net9.0\disc.jpg" />
+      <None Include="bin\Debug\net9.0\FarmDiffuseMap.jpg" />
+      <None Include="bin\Debug\net9.0\farm_barn_D.jpg" />
+      <None Include="bin\Debug\net9.0\fencetexture.jpg" />
+      <None Include="bin\Debug\net9.0\FH2FH2MYTC7GPAOLM4GMINFAD.jpg" />
+      <None Include="bin\Debug\net9.0\grass.jpg" />
+      <None Include="bin\Debug\net9.0\grills.tga.jpg" />
+      <None Include="bin\Debug\net9.0\GV9DDWNJDA5R6TJGCHROLJNZV.jpg" />
+      <None Include="bin\Debug\net9.0\JXGQO8CSI6A0F71GQOG24CBMD.jpg" />
+      <None Include="bin\Debug\net9.0\Lightmap.jpg" />
+      <None Include="bin\Debug\net9.0\models\car.3ds" />
+      <None Include="bin\Debug\net9.0\models\car2.3ds" />
+      <None Include="bin\Debug\net9.0\models\farm1.3ds" />
+      <None Include="bin\Debug\net9.0\models\farm2.3ds" />
+      <None Include="bin\Debug\net9.0\models\fence.3ds" />
+      <None Include="bin\Debug\net9.0\models\house1.3ds" />
+      <None Include="bin\Debug\net9.0\models\house2.3ds" />
+      <None Include="bin\Debug\net9.0\models\house3.3ds" />
+      <None Include="bin\Debug\net9.0\models\lightpost.3ds" />
+      <None Include="bin\Debug\net9.0\models\police_car.3ds" />
+      <None Include="bin\Debug\net9.0\models\supercar.3ds" />
+      <None Include="bin\Debug\net9.0\models\tractor.3ds" />
+      <None Include="bin\Debug\net9.0\MOS_IOS_LOCATION_Kent_Farm_Structure_Farm_House_Modular_D.jpg" />
+      <None Include="bin\Debug\net9.0\MOS_IOS_LOCATION_Kent_Farm_Structure_Farm_House_Roof_D.jpg" />
+      <None Include="bin\Debug\net9.0\MOS_IOS_LOCATION_Kent_Farm_Structure_Farm_House_Side_D.jpg" />
+      <None Include="bin\Debug\net9.0\nsx_cabin.jpg" />
+      <None Include="bin\Debug\net9.0\nsx_glass.jpg" />
+      <None Include="bin\Debug\net9.0\nsx_lights.jpg" />
+      <None Include="bin\Debug\net9.0\nsx_main.jpg" />
+      <None Include="bin\Debug\net9.0\nsx_wheel.jpg" />
+      <None Include="bin\Debug\net9.0\N_cdc93b866a7a4d3f9ce9193df126ba3b_Brahman_cow_Normal.png" />
+      <None Include="bin\Debug\net9.0\OCHD83XAEMFGPIS99GK6VOHCB.jpg" />
+      <None Include="bin\Debug\net9.0\plates_us1.jpg" />
+      <None Include="bin\Debug\net9.0\RGB_847f5040f1804b5f82ba43f0df1cb7fd_Brahman_cow_Albedo_2.png" />
+      <None Include="bin\Debug\net9.0\RGB_84c10ba3ea84403f840548e424ba2193_Brahman_cow_Albedo_3.png" />
+      <None Include="bin\Debug\net9.0\RGB_c0b7c7ad70104567b3bf7a88f362f48a_Brahman_cow_Albedo_1.png" />
+      <None Include="bin\Debug\net9.0\road.jpg" />
+      <None Include="bin\Debug\net9.0\roadstrip.jpg" />
+      <None Include="bin\Debug\net9.0\RTWVRP49M07EGC6YOXWCQEUNG.jpg" />
+      <None Include="bin\Debug\net9.0\R_06350467082f41b6815da1579bb29194_Brahman_cow_AO.png" />
+      <None Include="bin\Debug\net9.0\R_465ac479206b42d18e723bfdd2edf306_Brahman_cow_Smoothness.png" />
+      <None Include="bin\Debug\net9.0\R_acdd1ffa661c4b89b1426783b6828fba_Brahman_cow_Metallic.png" />
+      <None Include="bin\Debug\net9.0\R_ad4fdbf9126d41daa0c2864c73970b3e_Brahman_cow_Roughness.png" />
+      <None Include="bin\Debug\net9.0\saloon_wheel1.jpg" />
+      <None Include="bin\Debug\net9.0\suspension.tga.jpg" />
+      <None Include="bin\Debug\net9.0\texture.jpg" />
+      <None Include="bin\Debug\net9.0\tread.tga.jpg" />
+      <None Include="bin\Debug\net9.0\us_police_car_bo1.jpg" />
+      <None Include="bin\Debug\net9.0\van1.jpg" />
+      <None Include="bin\Debug\net9.0\van_interior.jpg" />
+      <None Include="bin\Debug\net9.0\xkr_cabin.jpg" />
+      <None Include="bin\Debug\net9.0\xkr_glass.jpg" />
+      <None Include="bin\Debug\net9.0\xkr_lights.jpg" />
+      <None Include="bin\Debug\net9.0\xkr_main.jpg" />
+      <None Include="bin\Debug\net9.0\xkr_wheel.jpg" />
+      <None Include="bin\Debug\net9.0\Z4SOH8TA9MSHTABGE6G5OYX6B.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net9.0\Bark.png" />
+      <Content Include="bin\Debug\net9.0\Bark_Normal.png" />
+      <Content Include="bin\Debug\net9.0\Defekt.png" />
+      <Content Include="bin\Debug\net9.0\Lieves.png" />
+      <Content Include="bin\Debug\net9.0\Lieves_Normal.png" />
+      <Content Include="bin\Debug\net9.0\Lieves_Opacity.png" />
+      <Content Include="bin\Debug\net9.0\Lieves_v2.png" />
+      <Content Include="bin\Debug\net9.0\Lieves_v3.png" />
+      <Content Include="bin\Debug\net9.0\Lieves_v4.png" />
+      <Content Include="bin\Debug\net9.0\Maple_barck_DISP.png" />
+      <Content Include="bin\Debug\net9.0\Maple_barck_SPECULAR.png" />
+      <Content Include="bin\Debug\net9.0\Maple_Height.png" />
+      <Content Include="bin\Debug\net9.0\models\low_poly_savana_tree.3mf" />
+      <Content Include="bin\Debug\net9.0\models\low_poly_savana_tree.obj" />
+      <Content Include="bin\Debug\net9.0\models\Maple_001.FBX" />
+      <Content Include="bin\Debug\net9.0\models\Maple_001.max" />
+      <Content Include="bin\Debug\net9.0\models\Maple_001.mtl" />
+      <Content Include="bin\Debug\net9.0\models\Maple_001.obj" />
+      <Content Include="bin\Debug\net9.0\roadstrip.jpg" />
+      <Content Include="bin\Debug\net9.0\Suchok.png" />
+      <Content Include="bin\Debug\net9.0\Картография.jfif" />
+      <Content Include="bin\Debug\net9.0\grass.jpg" />
+    </ItemGroup>
+
+</Project>

@@ -43,6 +43,7 @@ public class ViewWindow : GameWindow
     protected override void OnLoad()
     {
         base.OnLoad();
+        GL.ClearColor(Color.White);
 
         _vertexBufferObject = GL.GenBuffer();
         GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
@@ -67,7 +68,7 @@ public class ViewWindow : GameWindow
     {
         GL.Enable(EnableCap.Texture2D);
         _textRenderer = new TextRenderer(700, 1300);
-        _textRenderer.Clear(Color.Black);
+        _textRenderer.Clear(Color.White);
     }
 
     protected override void OnRenderFrame(FrameEventArgs args)
@@ -77,7 +78,7 @@ public class ViewWindow : GameWindow
         _primitiveShader.Use();
 
         DrawGameBoard();
-        DrawInformationMenu();
+        DrawInformation();
 
         SwapBuffers();
 
@@ -129,7 +130,7 @@ public class ViewWindow : GameWindow
 
                 var color = ToColor4Converter.Convert(
                     _gameModel.Board.Blocks[y, x] != null
-                        ? _gameModel.Board.Blocks[y, x]!
+                        ? _gameModel.Board.Blocks[y, x]
                         : GameBoard.BoardColor);
 
                 List<RGBVertex> vertices =
@@ -160,34 +161,31 @@ public class ViewWindow : GameWindow
         GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, RGBVertex.VertexSize * sizeof(float), 0);
         GL.EnableVertexAttribArray(0);
 
-        GL.VertexAttribPointer(1, 3, VertexAttribPointerType.Float, false,
-            RGBVertex.VertexSize * sizeof(float), RGBVertex.ColorIndex * sizeof(float));
+        GL.VertexAttribPointer(1, 3, VertexAttribPointerType.Float, false, RGBVertex.VertexSize * sizeof(float), RGBVertex.ColorIndex * sizeof(float));
         GL.EnableVertexAttribArray(1);
 
         GL.DrawArrays(mode, 0, array.Length / 6);
     }
 
-    private void DrawInformationMenu()
+    private void DrawInformation()
     {
         List<string> lines = _gameModel.State == GameState.GameOver
             ?
             [
                 "Game over!",
-                $"Score: {_gameModel.Score}",
-                "For restart click 'R'"
+                $"Score: {_gameModel.Score}"
             ]
             : _gameModel.State == GameState.Paused
                 ?
                 [
-                    "Paused",
-                    "Click 'P' for resume."
+                    "'P' to resume."
                 ]
                 :
                 [
                     $"Level: {_gameModel.Level}",
                     $"Score: {_gameModel.Score}",
                     $"Lines left: {_gameModel.LinesToNextLevel}",
-                    "Next tetromino:"
+                    "Next: "
                 ];
 
         RenderText(lines);
@@ -200,11 +198,11 @@ public class ViewWindow : GameWindow
 
     private void RenderText(List<string> lines)
     {
-        _textRenderer.Clear(Color.Black);
+        _textRenderer.Clear(Color.White);
 
         foreach (var line in lines)
         {
-            _textRenderer.DrawNewString(line, Brushes.White);
+            _textRenderer.DrawNewString(line, Brushes.Black);
         }
 
         DrawText();
@@ -217,12 +215,10 @@ public class ViewWindow : GameWindow
 
         // Загружаем данные в VBO и EBO
         GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferObject);
-        GL.BufferData(BufferTarget.ArrayBuffer, _textureVertices.Length * sizeof(float),
-            _textureVertices, BufferUsageHint.DynamicDraw);
+        GL.BufferData(BufferTarget.ArrayBuffer, _textureVertices.Length * sizeof(float), _textureVertices, BufferUsageHint.DynamicDraw);
 
         GL.BindBuffer(BufferTarget.ElementArrayBuffer, _elementBufferObject);
-        GL.BufferData(BufferTarget.ElementArrayBuffer, _textureIndices.Length * sizeof(uint), _textureIndices,
-            BufferUsageHint.DynamicDraw);
+        GL.BufferData(BufferTarget.ElementArrayBuffer, _textureIndices.Length * sizeof(uint), _textureIndices, BufferUsageHint.DynamicDraw);
 
         // Настройка атрибутов вершин
         GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
@@ -265,9 +261,6 @@ public class ViewWindow : GameWindow
                 break;
             case OpenTK.Windowing.GraphicsLibraryFramework.Keys.P:
                 _gameModel.Pause();
-                break;
-            case OpenTK.Windowing.GraphicsLibraryFramework.Keys.R:
-                _gameModel.Start();
                 break;
         }
     }

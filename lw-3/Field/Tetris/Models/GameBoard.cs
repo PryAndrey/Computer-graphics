@@ -11,7 +11,7 @@ namespace Tetris.Models
     {
         public const int Width = 10;
         public const int Height = 20;
-        public static readonly Color BoardColor = Color.LightGray;
+        public static readonly Color BoardColor = Color.LightBlue;
 
         public Color?[,] Blocks { get; private set; }
         public Tetromino CurrentTetromino { get; private set; }
@@ -178,9 +178,7 @@ namespace Tetris.Models
         private void MergeTetromino()
         {
             AddCurrentTetrominoToBoard();
-
             ClearFilledLines();
-
             SpawnNewTetromino();
         }
 
@@ -243,7 +241,7 @@ namespace Tetris.Models
             }
         }
 
-        private void ClearBoard()
+        public void ClearBoard()
         {
             Array.Clear(Blocks, 0, Blocks.Length);
         }
